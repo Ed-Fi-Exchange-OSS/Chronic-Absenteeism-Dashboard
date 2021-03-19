@@ -1,6 +1,16 @@
-# {Insert Repository Name Here}
+# Chronic-Absenteeism-Dashboard
 
-{Insert project information here}
+This repository provides a Chronic Absenteeism PowerBi Dashboard that is powered
+off of the the Ed-Fi ODS with AMT - Analytics Middle Tier. This dashboard provides
+row level security and filters data based on the users role. For example if a
+District Superintendent logs in then it will show data for all schools. If a School
+Principal is logged in he or she sees only data for his school. Subsequently a
+teacher sees only the students to the sections she teaches.
+
+Supports:
+
+* Ed-Fi Data Standard 3.0 and higher
+* Ed-Fi ODS/API Technical Suite 3, version 3.0 and higher
 
 ## Legal Information
 
