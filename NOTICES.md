@@ -1,4 +1,4 @@
-# <Insert Repository Name Here> Notices
+# Chronic-Absenteeism-Dashboard Notices
 
 This product includes software developed at the [Ed-Fi
 Alliance](https://www.ed-fi.org).
