@@ -13,8 +13,8 @@
 
 function Install-EdFiAMT($connStr) {
     Write-Host "     Downloading AMT"
-    $url = "https://github.com/Ed-Fi-Alliance-OSS/Ed-Fi-Analytics-Middle-Tier/releases/download/2.2.0/EdFi.AnalyticsMiddleTier-win10.x64-2.2.0.zip"
-    $outputpath = "$global:pathToBinaries\EdFi.AnalyticsMiddleTier-win10.x64-2.2.0.zip"
+    $url = "https://github.com/Ed-Fi-Alliance-OSS/Ed-Fi-Analytics-Middle-Tier/releases/download/2.7/EdFi.AnalyticsMiddleTier-win10.x64-2.7.zip"
+    $outputpath = "$global:pathToBinaries\EdFi.AnalyticsMiddleTier-win10.x64-2.7.zip"
     Invoke-DownloadFile $url $outputpath
 
     Write-Host "     Unziping AMT"

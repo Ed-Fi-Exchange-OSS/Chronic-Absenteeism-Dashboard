@@ -34,7 +34,7 @@ Write-Host "Step: Ensuring working path is accessible. ($global:pathToWorkingDir
 New-Item -ItemType Directory -Force -Path $global:pathToBinaries
 
 # The name with which to restore the populated template with.
-$global:populatedTemplateDatabaseName = "Ed-Fi_v5.2.0_ODS_ChronicAbsenteeismQuickStart"
+$global:populatedTemplateDatabaseName = "Ed-Fi_v5.3.0_ODS_ChronicAbsenteeismQuickStart"
 $connStrToODS = "server=.;database=$global:populatedTemplateDatabaseName;integrated security=sspi;"
 
 # *** Starting The Install *** #
@@ -43,27 +43,27 @@ Write-HostInfo "Installing Chronic Absenteeism Quick Start."
 Write-HostStep "Step 0: Ensuring all Prerequisites are installed."
 Install-QuickStartPrerequisites
 
-Write-HostStep "Step 1: Installing ODS S3 V5.2.0 Populated Template."
+Write-HostStep "Step 1: Installing ODS S3 V5.3.0 Populated Template."
 Install-OdsDbsS3V520PopultedTemplate
 
-Write-HostStep "Step 2: Installing Analyitcs Middle Tier."
+Write-HostStep "Step 2: Installing Analyitcs Middle Tier v2.7.0."
 Install-EdFiAMT $connStrToODS
 
 Write-HostStep "Step 3: Adding Demo data to the database"
 $pathToDemoFiles = "$global:pathToAssets\Database\MsSQL\Data"
-Invoke-SQLFilesOnDb $pathToDemoFiles $connStrToODS
+#Invoke-SQLFilesOnDb $pathToDemoFiles $connStrToODS
 
 Write-HostStep "Step 4: Applying required data structures (views)"
 $pathToStructureFiles = "$global:pathToAssets\Database\MsSQL\Structure"
 Invoke-SQLFilesOnDb $pathToStructureFiles $connStrToODS
 
 Write-HostStep "Step 5: Maturing the data with the Ed-Fi Time Travel Script."
-Install-EdFiTimeTravel $connStrToODS
+#Install-EdFiTimeTravel $connStrToODS
 
 # 6) Instal PowerBi and the CHRAB Quick Start
 Write-HostStep "Step: Installing Power Bi Dashboard."
-Install-PowerBi
-Open-PowerBiTemplate "$global:pathToAssets\ChronicAbsenteeismDashboard.pbix"
+#Install-PowerBi
+#Open-PowerBiTemplate "$global:pathToAssets\ChronicAbsenteeismDashboard.pbix"
 
 $finalMessage = @"
 
