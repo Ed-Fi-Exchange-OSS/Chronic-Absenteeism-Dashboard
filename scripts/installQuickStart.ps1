@@ -51,7 +51,7 @@ Install-EdFiAMT $connStrToODS
 
 Write-HostStep "Step 3: Adding Demo data to the database"
 $pathToDemoFiles = "$global:pathToAssets\Database\MsSQL\Data"
-#Invoke-SQLFilesOnDb $pathToDemoFiles $connStrToODS
+Invoke-SQLFilesOnDb $pathToDemoFiles $connStrToODS
 
 Write-HostStep "Step 4: Applying required data structures (views)"
 $pathToStructureFiles = "$global:pathToAssets\Database\MsSQL\Structure"
@@ -62,8 +62,8 @@ Write-HostStep "Step 5: Maturing the data with the Ed-Fi Time Travel Script."
 
 # 6) Instal PowerBi and the CHRAB Quick Start
 Write-HostStep "Step: Installing Power Bi Dashboard."
-#Install-PowerBi
-#Open-PowerBiTemplate "$global:pathToAssets\ChronicAbsenteeismDashboard.pbix"
+Install-PowerBi
+Open-PowerBiTemplate "$global:pathToAssets\ChronicAbsenteeismDashboard.pbix"
 
 $finalMessage = @"
 
