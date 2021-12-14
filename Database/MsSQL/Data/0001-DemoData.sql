@@ -14,6 +14,9 @@ SELECT CalendarCode,255901001,SchoolYear,CalendarTypeDescriptorId,Discriminator,
 FROM [edfi].[Calendar] 
 WHERE SchoolId =255901107
 
+--for some reason, in 5.3, the school year in the edfi.StudentSchoolAssociation was null except for one record. 
+UPDATE edfi.StudentSchoolAssociation
+SET SchoolYear = (SELECT DISTINCT SchoolYear FROM edfi.SchoolYearType WHERE CurrentSchoolYear = 1)
 
 --[edfi].[StaffElectronicMail]
 -- We are deploying to the ed-fi Power BI Online Services. Lets update to the email accounts that are in there.
