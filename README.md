@@ -120,12 +120,6 @@ The following metrics were all calculated using PowerBI DAX (Data Analysis Expre
   <td>CHRAB_OneTheVergeRate</td><td>analytics ADA Yearly</td><td>CHRAB_OneTheVergeRate  = DIVIDE(SUM([IsCHRAB_OnTheVerge]),COUNT([StudentKey]),0)</td><td><a href="https://github.com/Ed-Fi-Exchange-OSS/Chronic-Absenteeism-Dashboard/tree/main/metrics/SQL%20Scripts/CHRAB_OneTheVergeRate.sql">CHRAB_OneTheVergeRate.sql</a></td>
 </tr>
 <tr>
-  <td>Race</td><td>analytics DemographicDim</td><td>Race = if ('analytics DemographicDim'[DemographicParentKey] = "Race", 'analytics DemographicDim'[DemographicLabel])</td><td><a href="https://github.com/Ed-Fi-Exchange-OSS/Chronic-Absenteeism-Dashboard/tree/main/metrics/SQL%20Scripts/RaceFilter.sql">RaceFilter.sql</a></td>
-</tr>
-<tr>
-  <td>Race</td><td>analytics StudentSchoolDim	</td><td>Race = CALCULATE(CONCATENATEX('analytics DemographicDim','analytics DemographicDim'[DemographicLabel],","),FILTER('analytics DemographicDim','analytics DemographicDim'[DemographicParentKey] = "Race"))</td><td><a href="https://github.com/Ed-Fi-Exchange-OSS/Chronic-Absenteeism-Dashboard/tree/main/metrics/SQL%20Scripts/StudentRace.sql">StudentRace.sql</a></td>
-</tr>
-<tr>
   <td>GradeLevelNumeric</td><td>analytics StudentSchoolDim</td><td>GradeLevelNumeric = SWITCH(
 [GradeLevel],
 "First grade", "01 - First grade",
