@@ -26,7 +26,7 @@ Function Install-OdsDbsS3V520PopultedTemplate()
 {
     Write-Host "     Downloading database"
     $outputpath = "$global:pathToBinaries\"
-    $package = Save-Package -Name EdFi.Suite3.Ods.Populated.Template -Source EdFi@Release -LiteralPath $outputpath
+    $package = Save-Package -Name EdFi.Suite3.Ods.Populated.Template -RequiredVersion "5.3.297" -Source EdFi@Release -LiteralPath $outputpath
 
     Write-Host "     Unziping database"
     $nugetFile = "$outputpath\$($package.name).$($package.version).nupkg"
