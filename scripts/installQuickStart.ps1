@@ -43,7 +43,7 @@ Write-HostInfo "Installing Chronic Absenteeism Quick Start."
 Write-HostStep "Step 0: Ensuring all Prerequisites are installed."
 Install-QuickStartPrerequisites
 
-Write-HostStep "Step 1: Installing ODS S3 V5.3.0 Populated Template."
+Write-HostStep "Step 1: Installing ODS S3 V5.3 Populated Template."
 Install-OdsDbsS3V520PopultedTemplate
 
 Write-HostStep "Step 2: Installing Analyitcs Middle Tier v2.7.0."
