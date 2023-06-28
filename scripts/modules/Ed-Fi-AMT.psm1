@@ -21,7 +21,7 @@ function Install-EdFiAMT($connStr) {
     $unzipPath = "$global:pathToWorkingDir\AMT"
     Expand-Archive -LiteralPath $outputpath -DestinationPath $unzipPath -Force
 
-    $pathToAMTInstaller = "$unzipPath\EdFi.AnalyticsMiddleTier.Console.exe"
+    $pathToAMTInstaller = (Get-ChildItem -Path $unzipPath -Recurse -File -Include "EdFi.AnalyticsMiddleTier.Console.exe" | ForEach-Object {$_.FullName})
     #$connStr = "server=.;database=$global:populatedTemplateDatabaseName;integrated security=sspi;"
     $params = "-c '$connStr' -o Indexes RLS EWS CHRAB"
     Write-Host $params
